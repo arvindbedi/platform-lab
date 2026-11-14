@@ -1,2 +1,2 @@
 # apps
-orders-api and other applications and services
+Application code: orders-api (FastAPI, Postgres, Redis) and small supporting services

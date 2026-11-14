@@ -1,2 +1,2 @@
 # aiops
-anamoly detector, RCA services, Remediation service and /evals
+Anomaly detector, LLM root-cause-analysis service, guarded remediation agent, evals/
