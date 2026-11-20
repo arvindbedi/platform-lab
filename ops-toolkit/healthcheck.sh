@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+threshold=${1:-80}  # Default threshold is 80% if not provided as an argument
 echo "Checking health of the system..."
 echo "Disk usage:"
 echo "----------------"
@@ -9,7 +10,7 @@ echo "----------------"
 echo "Disk usage by mount point:"
 df --output=pcent,target | tail -n +2 | while read -r pct target; do
 usage=$(echo "$pct" | tr -d '%')
-if [ "$usage" -gt 30 ]; then
+if [ "$usage" -gt "$threshold" ]; then
     echo "Warning: $target is at $usage% usage"
 fi
 #echo "$target is at $pct usage"
